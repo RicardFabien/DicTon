@@ -14,4 +14,3 @@ def getRawText() :
         if line.strip() == "$" :
             return rawLines
     
-print(getRawText())

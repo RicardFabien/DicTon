@@ -1,2 +1,2 @@
 # DicTon
-A piece of software for dictation
+A piece of software for speeling tests

@@ -14,3 +14,5 @@ def getRawText() :
         if line.strip() == "$" :
             return rawLines
     
+
+getRawText()

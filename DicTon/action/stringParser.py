@@ -3,22 +3,15 @@ Created on 29 janv. 2020
 
 @author: farben
 '''
-def parseText():
-    rawLines = []
+def parseText(text):
 
+    text = text.replace(",", " ") 
+    text = text.replace(".", " ")
+    text = text.replace(";", " ") 
+    text = text.replace(":", " ") 
+    
+    rawLines = text.split()
 
-   
-    
-    rawLines.pop(0)
-    rawLines.pop()
-    
-    for line in rawLines : 
-        print(rawLines)
-        line = line.replace(",", "") 
-        line = line.replace(".", "")
-        line = line.replace(";", "") 
-        line = line.replace(":", "")  
-    
     print(rawLines)
     return  rawLines
     

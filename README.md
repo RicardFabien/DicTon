@@ -1,2 +1,2 @@
 # DicTon
-A piece of software for speeling tests
+A piece of software for automated speeling tests

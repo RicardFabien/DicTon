@@ -5,16 +5,13 @@ Created on 30 janv. 2020
 '''
 
 from tkinter import *
-from tkinter.messagebox import *
 
-def alert():
-    showinfo("alerte", "Bravo!")
 
 class windowManager:
     
     interfaceManager = 0
   
-    def __init__(self,rootWindow = Tk()):
+    def __init__(self,rootWindow = Tk(), ):
         rootWindow = rootWindow
         
         
@@ -26,11 +23,13 @@ class windowManager:
         button = Button(rootWindow, text = "Soumettre dictée")
         button.pack(side = BOTTOM)
         
+        textBox = Text(rootWindow)
+        textBox.pack(side = TOP, expand = YES)
         
         menubar = Menu(rootWindow)
 
         menu1 = Menu(menubar, tearoff=0)
-        menu1.add_command(label="Choisir texte", command=alert)
+        menu1.add_command(label="Choisir texte")
         menubar.add_cascade(label="Fichier", menu=menu1)
         
         
@@ -40,6 +39,6 @@ class windowManager:
         
         rootWindow.mainloop()
         
-windowManager = windowManager()
+
 
 

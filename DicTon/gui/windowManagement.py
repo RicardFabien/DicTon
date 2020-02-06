@@ -11,8 +11,9 @@ class windowManager:
     
     interfaceManager = 0
   
-    def __init__(self,rootWindow = Tk(), ):
-        rootWindow = rootWindow
+    def __init__(self , interfaceManager):
+        rootWindow = Tk()
+        self.interfaceManager = interfaceManager
         
         
         rootWindow.title("DicTon")
@@ -39,6 +40,8 @@ class windowManager:
         
         rootWindow.mainloop()
         
-
+        
+    def submitExercise(self):
+        pass
 
 

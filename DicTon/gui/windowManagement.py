@@ -5,29 +5,42 @@ Created on 30 janv. 2020
 '''
 
 from tkinter import *
+from gui.interfaceManagement import interfaceManager
+'''Considered as false by eclipse, runs without problem'''
 
+
+
+#The class organise the modification on the screen
 
 class windowManager:
     
     interfaceManager = 0
   
+    
+  
     def __init__(self , interfaceManager):
-        rootWindow = Tk()
+        
+        self.rootWindow = Tk()
         self.interfaceManager = interfaceManager
+
+        
+        self.rootWindow.title("DicTon")
+        self.rootWindow.geometry("480x360")
+        self.rootWindow.minsize(480,360)
+        self.rootWindow.config(background = "#dfff80")
         
         
-        rootWindow.title("DicTon")
-        rootWindow.geometry("480x360")
-        rootWindow.minsize(480,360)
-        rootWindow.config(background = "#dfff80")
+        def submitExercise():
+            self.interfaceManager.submitExercise()
         
-        button = Button(rootWindow, text = "Soumettre dictée")
+        button = Button(self.rootWindow, text = "Soumettre dictée", command = submitExercise)
         button.pack(side = BOTTOM)
         
-        textBox = Text(rootWindow)
+        
+        textBox = Text(self.rootWindow)
         textBox.pack(side = TOP, expand = YES)
         
-        menubar = Menu(rootWindow)
+        menubar = Menu(self.rootWindow)
 
         menu1 = Menu(menubar, tearoff=0)
         menu1.add_command(label="Choisir texte")
@@ -35,13 +48,12 @@ class windowManager:
         
         
         
-        rootWindow.config(menu = menubar)
+        self.rootWindow.config(menu = menubar)
         
         
-        rootWindow.mainloop()
+        self.rootWindow.mainloop()
         
-        
-    def submitExercise(self):
-        pass
+windowManager(interfaceManager())
+    
 
 

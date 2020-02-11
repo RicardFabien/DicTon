@@ -6,17 +6,17 @@ Created on 30 janv. 2020
 
 from enum import Enum
 
-class InterfaceManager():
+class interfaceManager():
     
     def __init__(self):
         pass
     
-    def SubmitExercise(self):
+    def submitExercise(self):
         print("soumet dictée")   
 
 
 class commands(Enum):
     SUBMIT = "submit"
     START_SPEECH = "start_speech"
-    
+    PAUSE_SPEECH = "pause_speech"
     

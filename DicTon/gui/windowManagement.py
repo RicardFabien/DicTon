@@ -6,8 +6,6 @@ Created on 30 janv. 2020
 
 from tkinter import *
 from gui.interfaceManagement import interfaceManager
-'''Considered as false by eclipse, runs without problem'''
-
 
 
 #The class organise the modification on the screen
@@ -16,7 +14,8 @@ class windowManager:
     
     interfaceManager = 0
   
-    
+    def submitExercise(self):
+            self.interfaceManager.submitExercise(self.textBox.get("1.0","end-1c"))
   
     def __init__(self, interfaceManager):
         
@@ -32,13 +31,12 @@ class windowManager:
         
         
         
-        def submitExercise():
-            self.interfaceManager.submitExercise(self.textBox.get("1.0","end-1c"))
+        
         
         buttonFrame = Frame()
         buttonFrame.pack(side = BOTTOM)
         
-        button = Button(self.rootWindow, text = "Soumettre dictée", command = submitExercise)
+        button = Button(self.rootWindow, text = "Soumettre dictée", command = self.submitExercise)
         button.pack(side = BOTTOM)
         
         

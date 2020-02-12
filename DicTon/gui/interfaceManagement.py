@@ -5,11 +5,26 @@ Created on 30 janv. 2020
 '''
 
 from enum import Enum
+from gui.textReading import textReader
 
 class interfaceManager():
     
     def __init__(self):
+        
+        self.textSource = "default.txt"
+        self.__textReader = textReader()
+        
+    
+    def startReading(self):
         pass
+    
+    def stopReading(self):
+        pass
+    
+    def changeTextSource(self,path) : 
+        pass
+    
+    
     
     def submitExercise(self, text):
         print("soumet dictée " + text)   

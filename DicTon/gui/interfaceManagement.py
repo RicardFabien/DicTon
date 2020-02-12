@@ -11,8 +11,8 @@ class interfaceManager():
     def __init__(self):
         pass
     
-    def submitExercise(self):
-        print("soumet dictée")   
+    def submitExercise(self, text):
+        print("soumet dictée " + text)   
 
 
 class commands(Enum):

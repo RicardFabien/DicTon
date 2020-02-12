@@ -18,7 +18,7 @@ class windowManager:
   
     
   
-    def __init__(self , interfaceManager):
+    def __init__(self, interfaceManager):
         
         self.rootWindow = Tk()
         self.interfaceManager = interfaceManager
@@ -30,18 +30,31 @@ class windowManager:
         self.rootWindow.config(background = "#dfff80")
         
         
+        
+        
         def submitExercise():
-            self.interfaceManager.submitExercise()
+            self.interfaceManager.submitExercise(self.textBox.get("1.0","end-1c"))
+        
+        buttonFrame = Frame()
+        buttonFrame.pack(side = BOTTOM)
         
         button = Button(self.rootWindow, text = "Soumettre dictée", command = submitExercise)
         button.pack(side = BOTTOM)
         
         
-        textBox = Text(self.rootWindow)
-        textBox.pack(side = TOP, expand = YES)
+        
+        
+        textFrame = Frame(self.rootWindow)
+        textFrame.pack(fill = BOTH, side = TOP)
+        
+        self.textBox = Text(textFrame)
+        self.textBox.pack(fill = BOTH, expand = YES)
+        
+        
+        
         
         menubar = Menu(self.rootWindow)
-
+        
         menu1 = Menu(menubar, tearoff=0)
         menu1.add_command(label="Choisir texte")
         menubar.add_cascade(label="Fichier", menu=menu1)
@@ -53,7 +66,7 @@ class windowManager:
         
         self.rootWindow.mainloop()
         
-windowManager(interfaceManager())
+
     
 
 

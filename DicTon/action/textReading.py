@@ -8,9 +8,9 @@ import os
 
 class textReader():
     
-    def __init__(self, text):
-        self.text = text
+    def __init__(self):
+        pass
         
        
-    def read(self):
-         os.system("espeak '"+ self.text +"'")
+    def read(self, text, repetition):
+        os.system("espeak '"+ text +"'")

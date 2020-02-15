@@ -30,9 +30,6 @@ class windowManager:
         
         
         
-        
-        
-        
         buttonFrame = Frame()
         buttonFrame.pack(side = BOTTOM)
         

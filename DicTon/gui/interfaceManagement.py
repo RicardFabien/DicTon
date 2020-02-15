@@ -5,13 +5,16 @@ Created on 30 janv. 2020
 '''
 
 from enum import Enum
-from gui.textReading import textReader
+from action.textReading import textReader
+from files.fileManagement import getTextFromFile
 
 class interfaceManager():
     
     def __init__(self):
         
-        self.textSource = "default.txt"
+        self.__textSource = "../default.txt"
+        self.__text = getTextFromFile
+        
         self.__textReader = textReader()
         
     

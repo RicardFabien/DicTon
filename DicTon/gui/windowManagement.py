@@ -17,6 +17,11 @@ class windowManager:
     def submitExercise(self):
             self.interfaceManager.submitExercise(self.textBox.get("1.0","end-1c"))
   
+    def startExercise(self):
+        self.interfaceManager.startReading()
+    
+    
+  
     def __init__(self, interfaceManager):
         
         self.rootWindow = Tk()
@@ -33,14 +38,15 @@ class windowManager:
         buttonFrame = Frame()
         buttonFrame.pack(side = BOTTOM)
         
-        button = Button(self.rootWindow, text = "Soumettre dictée", command = self.submitExercise)
-        button.pack(side = BOTTOM)
+        submitButton = Button(buttonFrame, text = "Soumettre dictée", command = self.submitExercise)
+        submitButton.pack(side = RIGHT)
         
-        
+        startButton = Button(buttonFrame, text = "Start dictée", command = self.startExercise)
+        startButton.pack(side = LEFT)
         
         
         textFrame = Frame(self.rootWindow)
-        textFrame.pack(fill = BOTH, side = TOP)
+        textFrame.pack(fill = BOTH, side = TOP, expand = YES)
         
         self.textBox = Text(textFrame)
         self.textBox.pack(fill = BOTH, expand = YES)
@@ -62,6 +68,6 @@ class windowManager:
         self.rootWindow.mainloop()
         
 
-    
+windowManager(interfaceManager())
 
 

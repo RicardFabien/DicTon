@@ -9,5 +9,5 @@ from action.textReading import textReader
 
 '''windowManager(interfaceManager())'''
 
-textReader = textReader("the small bunny and the big cat")
-textReader.read()
+textReader = textReader()
+textReader.read("the small bunny and the big cat", 3)

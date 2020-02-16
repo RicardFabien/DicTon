@@ -5,6 +5,7 @@ Created on 12 févr. 2020
 '''
 
 import os
+import re
 
 class textReader():
     
@@ -13,4 +14,13 @@ class textReader():
         
        
     def read(self, text, repetition):
-        os.system("espeak '"+ text +"'")
+        
+        print(text)
+        
+        parsedText = re.split("[,.]",text  )
+        for p in parsedText :
+            for i in range(repetition) :
+                os.system("espeak '"+ p +"'")
+                
+                
+        

@@ -13,13 +13,13 @@ class interfaceManager():
     def __init__(self):
         
         self.__textSource = "../default.txt"
-        self.__text = getTextFromFile
+        self.__text = getTextFromFile(self.__textSource)
         
         self.__textReader = textReader()
         
     
     def startReading(self):
-        pass
+        textReader.read(textReader, self.__text, 3)
     
     def stopReading(self):
         pass

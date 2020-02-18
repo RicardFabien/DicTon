@@ -6,21 +6,26 @@ Created on 12 févr. 2020
 
 import os
 import re
+import threading
 
-class textReader():
+class textReader(threading.Thread):
+    
+    __text = ""
+    __repetition = 1
     
     def __init__(self):
-        pass
+        threading.Thread.__init__(self)
         
        
     def read(self, text, repetition):
+        self.__text = text
+        self.__repetition = repetition
+                     
+    def run(self):
         
-        print(text)
-        
-        parsedText = re.split("[,.]",text  )
+        parsedText = re.split("[,.]",self.__text  )
+             
         for p in parsedText :
-            for i in range(repetition) :
+            for i in range(self.__repetition) :
                 os.system("espeak '"+ p +"'")
-                
-                
         

@@ -68,6 +68,6 @@ class windowManager:
         self.rootWindow.mainloop()
         
 
-windowManager(interfaceManager())
+
 
 

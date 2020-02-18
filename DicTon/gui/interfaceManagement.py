@@ -10,6 +10,8 @@ from files.fileManagement import getTextFromFile
 
 class interfaceManager():
     
+    __textSource = "../default.txt"
+    
     def __init__(self):
         
         self.__textSource = "../default.txt"
@@ -19,7 +21,8 @@ class interfaceManager():
         
     
     def startReading(self):
-        textReader.read(textReader, self.__text, 3)
+        self.__textReader.read( self.__text, 3)
+        self.__textReader.start()
     
     def stopReading(self):
         pass

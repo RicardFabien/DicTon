@@ -25,7 +25,7 @@ class interfaceManager():
         self.__textReader.start()
     
     def stopReading(self):
-        pass
+        self.__textReader.pause()
     
     def changeTextSource(self,path) : 
         pass

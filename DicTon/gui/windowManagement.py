@@ -41,8 +41,11 @@ class windowManager:
         submitButton = Button(buttonFrame, text = "Soumettre dictée", command = self.submitExercise)
         submitButton.pack(side = RIGHT)
         
-        startButton = Button(buttonFrame, text = "Start dictée", command = self.startExercise)
+        startButton = Button(buttonFrame, text = "Commence dictée", command = self.startExercise)
         startButton.pack(side = LEFT)
+        
+        pauseButton = Button(buttonFrame, text = "Pause dictée", command = self.startExercise)
+        pauseButton.pack()
         
         
         textFrame = Frame(self.rootWindow)
@@ -64,7 +67,11 @@ class windowManager:
         
         self.rootWindow.config(menu = menubar)
         
+        def kill():
+            sys.exit()
         
+        
+        self.rootWindow.protocol("WM_DELETE_WINDOW", kill)
         self.rootWindow.mainloop()
         
 

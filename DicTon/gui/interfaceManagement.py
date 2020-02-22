@@ -14,9 +14,7 @@ class interfaceManager():
     
     def __init__(self):
         
-        self.__textSource = "../default.txt"
-        self.__text = getTextFromFile(self.__textSource)
-        
+        self.__text = "Le petit lapin saute, \n Le renard le suit de près,\n la fleur tombe."
         self.__textReader = textReader()
         
     
@@ -24,20 +22,18 @@ class interfaceManager():
         self.__textReader.read( self.__text, 3)
         self.__textReader.start()
     
+    
     def stopReading(self):
-        self.__textReader.pause()
+        self.__textReader.kill()
+    
     
     def changeTextSource(self,path) : 
-        pass
-    
+        
+        self.__textSource = path
+        self.__text = getTextFromFile(self.__textSource)
     
     
     def submitExercise(self, text):
         print("soumet dictée " + text)   
 
-
-class commands(Enum):
-    SUBMIT = "submit"
-    START_SPEECH = "start_speech"
-    PAUSE_SPEECH = "pause_speech"
     

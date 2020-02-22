@@ -8,6 +8,7 @@ import os
 import re
 import threading
 from time import sleep
+from gi import sys
 
 class textReader(threading.Thread):
     
@@ -24,24 +25,21 @@ class textReader(threading.Thread):
     def read(self, text, repetition):
         self.__text = text
         self.__repetition = repetition
-
+        self.__sentencePart = 0
+        
                      
-    def pause(self):
-        pass
+    def kill(self):
+        sys.exit()
     
                      
     def run(self):
         
         parsedText = re.split("[,.]",self.__text  )
         
-        while self.__pause not in True :
-            for p in parsedText :
-                if(self.__pause):
-                        break
-                for i in range(self.__sentencePart, self.__repetition) :
-                    os.system("espeak -v fr '"+ p +"'")
-                    if(self.__pause):
-                        break
-                    sleep(1)
+        for p in parsedText :
+            
+            for i in range(self.__sentencePart, self.__repetition) :
+                os.system("espeak -v fr '"+ p +"'")
+                sleep(1)
                 self.__sentencePart += 1
         

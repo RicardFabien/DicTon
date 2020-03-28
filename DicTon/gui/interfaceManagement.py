@@ -14,7 +14,7 @@ class interfaceManager():
     
     def __init__(self):
         
-        self.__text = "Le petit lapin saute, \n Le renard le suit de près,\n la fleur tombe."
+        self.__text = "Le petit lapin saute"
         self.__textReader = textReader()
         
     
@@ -33,8 +33,29 @@ class interfaceManager():
         self.__text = getTextFromFile(self.__textSource)
     
     
+    def getText(self):
+        return self.__text
+    
     def submitExercise(self, text):
         
-        print("soumet dictée " + text)   
+        cutText = text.split()
+        originalCutText = self.__text.split()
+        
+        missedWordCoor = []
+        charCount = 0
+        
+        for i in enumerate(cutText) :
+            if(cutText[i[0]] != originalCutText[i[0]]):
+                missedWordCoor.append([charCount , charCount + len(cutText[i[0]])])
+                
+            charCount += len(cutText[i[0]])
+            charCount += 1
+            
+        return missedWordCoor
+            
+            
+        
+        
+         
 
     

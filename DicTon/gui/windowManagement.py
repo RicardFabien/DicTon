@@ -4,12 +4,13 @@ Created on 30 janv. 2020
 @author: farben
 '''
 
-from tkinter import *
+from tkinter import *  
+
 from gui.interfaceManagement import interfaceManager
 from tkinter.filedialog import  askopenfilename
 
 
-#The class organise the modification on the screen
+#The class organises the modification on the screen
 
 class windowManager:
     
@@ -20,6 +21,9 @@ class windowManager:
   
     def startExercise(self):
         self.interfaceManager.startReading()
+        
+    def stopExercise(self):
+        self.interfaceManager.stopReading()
     
     def changeTextSource(self):
         
@@ -45,10 +49,10 @@ class windowManager:
         submitButton = Button(buttonFrame, text = "Soumettre dictée", command = self.submitExercise)
         submitButton.pack(side = RIGHT)
         
-        startButton = Button(buttonFrame, text = "Commence dictée", command = self.startExercise)
+        startButton = Button(buttonFrame, text = "Commencer dictée", command = self.startExercise)
         startButton.pack(side = LEFT)
         
-        pauseButton = Button(buttonFrame, text = "Pause dictée", command = self.startExercise)
+        pauseButton = Button(buttonFrame, text = "Stopper dictée", command = self.stopExercise)
         pauseButton.pack()
         
         

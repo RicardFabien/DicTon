@@ -34,6 +34,7 @@ class interfaceManager():
     
     
     def submitExercise(self, text):
+        
         print("soumet dictée " + text)   
 
     

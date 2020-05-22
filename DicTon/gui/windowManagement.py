@@ -38,7 +38,7 @@ class windowManager:
         self.interfaceManager.stopReading()
     
     def changeTextSource(self):
-        
+    
         textSource = askopenfilename(initialdir = "/home",title = "Select file")
         self.interfaceManager.changeTextSource(textSource)
   

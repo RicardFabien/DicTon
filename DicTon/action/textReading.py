@@ -15,7 +15,7 @@ class textReader(threading.Thread):
     __text = ""
     __repetition = 1
     
-    __pause = False
+    __stopEvent = threading.Event()
     __sentencePart = 0
     
     def __init__(self):
@@ -29,7 +29,7 @@ class textReader(threading.Thread):
         
                      
     def kill(self):
-        sys.exit()
+        self.__stopEvent.set()
     
                      
     def run(self):
@@ -42,4 +42,7 @@ class textReader(threading.Thread):
                 os.system("espeak -v fr '"+ p +"'")
                 sleep(1)
                 self.__sentencePart += 1
+                
+                if(self.__stopEvent.is_set()):
+                    break
         

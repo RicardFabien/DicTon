@@ -3,7 +3,8 @@ Created on 11 févr. 2020
 
 @author: farben
 '''
-from gui.windowManagement import windowManager
-from gui.windowManagement import interfaceManager
+from gui.interfaceManagement import interfaceManager
 
-windowManager(interfaceManager())
+interfaceManager = interfaceManager()
+
+print(interfaceManager.submitExercise("Un simple, \n test "))

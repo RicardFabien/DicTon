@@ -17,16 +17,19 @@ class windowManager:
     interfaceManager = 0
   
     def submitExercise(self):
-            missedWord = self.interfaceManager.submitExercise(self.textBox.get("1.0","end-1c"))
             
-            self.textBox.tag_configure( "MISS", foreground = "red" )
+            missedWord = self.interfaceManager.submitExercise(self.textBox.get("1.0","end - 1c"))
+            
+            print (missedWord)
+            
             self.textBox.tag_configure( "CORRECT", foreground = "green" )
+            self.textBox.tag_configure( "MISS", foreground = "red" )
             
-            self.textBox.tag_add("CORRECT",SEL_FIRST,SEL_LAST)
+            self.textBox.tag_add("CORRECT", "1.0","end - 1c") 
             
             for coor in missedWord :
-                self.textBox.tag_add("MISS", "1." + str(coor[0]), "1." + str(coor[1]))
-            
+                self.textBox.tag_add("MISS", str(coor[2]) + "." + str(coor[0]), str(coor[2]) + "." + str(coor[1]))
+                print(str(coor[2]) + "." + str(coor[0]) + "   " + str(coor[2]) + "." + str(coor[1]))
             
             
             

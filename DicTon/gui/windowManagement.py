@@ -43,6 +43,9 @@ class windowManager:
     def changeTextSource(self):
     
         textSource = askopenfilename(initialdir = "/home",title = "Select file")
+        if not textSource : 
+            return
+        
         self.interfaceManager.changeTextSource(textSource)
   
     def __init__(self, interfaceManager):
